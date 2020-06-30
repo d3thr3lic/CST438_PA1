@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmls:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Hello</title>
+</head>
+<body>
+<h2 th:inline="text">Thank you for submitting your movie rating [[${name}]]</h2>
+<p><a href="/movies/new">Click here to submit another.</a></p>
+<p><a href="/movies">Click here to see other submissions.</a></p>
+</body>
+</html>
