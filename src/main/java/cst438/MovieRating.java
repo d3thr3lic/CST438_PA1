@@ -28,16 +28,14 @@ public class MovieRating {
   @NotNull
   @Max(5)
   @Min(1)
-  private long rating;
+  private int rating;
   
   @NotNull
   private String date;
   
-  public MovieRating() {
+  public MovieRating() {}
   
-  }
-  
-  public MovieRating(long id, String name, String title, Long rating, String date) {
+  public MovieRating(long id, String name, String title, int rating, String date) {
     super();
     this.id = id;
     this.name = name;
@@ -70,11 +68,11 @@ public class MovieRating {
     this.title = title;
   }
 
-  public long getRating() {
+  public int getRating() {
     return rating;
   }
 
-  public void setRating(long rating) {
+  public void setRating(int rating) {
     this.rating = rating;
   }
 

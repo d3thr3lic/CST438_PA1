@@ -7,20 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MovieController { // localhost:8080/hello?name=mitchell
+public class MovieController { //localhost:8080 for default landing page
   
   @Autowired
   MovieRatingRepository movieRatingRepository;
-  
-  @GetMapping("/hello")
-  public String hello(@RequestParam("name") String name, Model model) {
-    model.addAttribute("name", name);
-    model.addAttribute("time", new java.util.Date().toString());
-    return "index";
-  }
 
   @GetMapping("movies/new")
   public String createNewRating(Model model) {
@@ -44,6 +36,6 @@ public class MovieController { // localhost:8080/hello?name=mitchell
     Iterable<MovieRating> movieRating = movieRatingRepository.findAll();
     model.addAttribute("movieRating", movieRating);
     return "movie_list";
-    
   }
+  
 }
